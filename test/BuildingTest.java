@@ -43,4 +43,20 @@ public class BuildingTest {
             assertTrue(true);
         }
     }
+
+    @Test
+    void shallCorrectlyRemoveAResident()
+    {
+        String initialResidents = "initialResident";
+        Building building = new Building(1, initialResidents);
+        building.addResident("second");
+        building.removeResident("second");
+        try {
+            assertNotEquals("second", building.getResidents()[1]);
+        }
+        catch (Exception e)
+        {
+            assertTrue(true);
+        }
+    }
 }
