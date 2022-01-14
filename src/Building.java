@@ -3,29 +3,35 @@ import java.util.List;
 
 public class Building {
     private int id;
-    private String initialResident;
-    private String[] residents;
+    List<String> residents = new LinkedList<String>();
 
     public Building(int id, String initalResident) {
         this.id = id;
-        this.initialResident = initalResident;
+        residents.add(initalResident);
     }
 
     public Building(int id, String[] residents) {
         this.id = id;
-        this.initialResident = residents[0];
-        this.residents = residents;
+        for (String s: residents) {
+            this.residents.add(s);
+        }
+    }
+
+    public void addResident(String resident)
+    {
+        residents.add(resident);
     }
 
     public int getId() {
         return id;
     }
 
-    public String getInitialResident() {
-        return initialResident;
-    }
-
     public String[] getResidents() {
-        return residents;
+        String[] rString = new String[this.residents.size()];
+        for(int i = 0; i < this.residents.size(); i++)
+        {
+            rString[i] = this.residents.get(i);
+        }
+        return  rString;
     }
 }
