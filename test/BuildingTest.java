@@ -9,4 +9,14 @@ public class BuildingTest {
         assertEquals(1, building.getId());
         assertEquals("initialResident" , building.getInitialResident());
     }
+
+    @Test
+    void shallInitializeWithCorrectValuesWhenGivenAStringArray()
+    {
+        String[] initialResidents = {"initialResident", "secondResident"};
+        Building building = new Building(1, initialResidents);
+        assertEquals(1, building.getId());
+        assertEquals("initialResident" , building.getResidents()[0]);
+        assertEquals("secondResident" , building.getResidents()[1]);
+    }
 }
