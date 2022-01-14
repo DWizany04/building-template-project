@@ -28,4 +28,19 @@ public class BuildingTest {
         building.addResident("second");
         assertEquals("second", building.getResidents()[1]);
     }
+
+    @Test
+    void shallNotAddAResidentTwice()
+    {
+        String initialResidents = "initialResident";
+        Building building = new Building(1, initialResidents);
+        building.addResident("initialResident");
+        try {
+            assertNotEquals("initialResident", building.getResidents()[1]);
+        }
+        catch (Exception e)
+        {
+            assertTrue(true);
+        }
+    }
 }

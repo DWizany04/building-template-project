@@ -19,7 +19,17 @@ public class Building {
 
     public void addResident(String resident)
     {
-        residents.add(resident);
+        boolean exists = false;
+        for (String s: this.residents) {
+            if(resident.equals(s))
+            {
+                exists = true;
+            }
+        }
+        if(!exists)
+        {
+            residents.add(resident);
+        }
     }
 
     public int getId() {
