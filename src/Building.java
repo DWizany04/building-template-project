@@ -32,10 +32,23 @@ public class Building {
         }
     }
 
-    public void removeResident(String resident)
+    public boolean removeResident(String resident)
     {
+        boolean exists = false;
+        for (String s: this.residents) {
+            if (resident.equals(s)) {
+                exists = true;
+            }
+        }
+        if(!exists)
+        {
+            return false;
+        }
         residents.remove(resident);
+        return true;
     }
+
+
 
     public int getId() {
         return id;

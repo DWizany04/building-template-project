@@ -59,4 +59,15 @@ public class BuildingTest {
             assertTrue(true);
         }
     }
+
+    @Test
+    void shallNotRemoveAResidentThatDoesntExists()
+    {
+        String initialResidents = "initialResident";
+        Building building = new Building(1, initialResidents);
+        boolean success = building.removeResident("second");
+        assertEquals(false, success);
+    }
+
+
 }
