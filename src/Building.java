@@ -48,7 +48,10 @@ public class Building {
         return true;
     }
 
-
+    public int getNumberOfResidents()
+    {
+        return this.residents.size();
+    }
 
     public int getId() {
         return id;

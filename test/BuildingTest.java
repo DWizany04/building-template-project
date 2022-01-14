@@ -69,5 +69,11 @@ public class BuildingTest {
         assertEquals(false, success);
     }
 
-
+    @Test
+    void shallReturnTheCorrectNumberOfResidents()
+    {
+        String[] initialResidents = {"1", "2", "3", "4"};
+        Building building = new Building(1, initialResidents);
+        assertEquals(4, building.getNumberOfResidents());
+    }
 }
